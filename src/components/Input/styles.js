@@ -24,14 +24,14 @@ export const InputBox = styled.div`
   color: ${({ theme }) => theme.colors.light_500};
   border-radius: .8rem;
 
-  input {
+  > input {
     width: 100%;
 
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   
-    padding: 1.2rem 1.4rem;
+    padding: 1.2rem 1.2rem;
     background: transparent;
     border: 0;
     color: ${({ theme }) => theme.colors.light_500};
