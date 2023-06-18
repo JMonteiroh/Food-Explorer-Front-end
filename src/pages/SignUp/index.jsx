@@ -10,7 +10,7 @@ export function SignUp() {
     <Container>
       <Logo />
       <Form>
-        <h1>Faça login</h1>
+        <h1>Crie sua conta</h1>
         <Input
           title={'Seu nome'}
           placeholder={'Exemplo: Maria da Silva'}
