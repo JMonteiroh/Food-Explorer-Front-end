@@ -5,15 +5,15 @@ export const Container = styled.div`
   align-items: center;
   
   > img {
-    height: 4.3rem;
-    width: 4.3rem;
-    margin-right: 1.1rem;
+    height: calc(${props => props.size} * 4.3rem);
+    width: calc(${props => props.size} * 4.3rem);
+    margin-right: calc(${props => props.size} * 1.1rem);
   }
 
   > h1 {
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 3.7rem;
-    line-height: 4.4rem;
+    font-size: calc(${props => props.size} * 3.7rem);
+    line-height: calc(${props => props.size} * 4.4rem);
   }
-
 `;
