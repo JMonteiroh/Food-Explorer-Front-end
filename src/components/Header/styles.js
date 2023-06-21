@@ -69,7 +69,21 @@ export const Content = styled.div`
 
     .desktop {
       visibility: visible;
+      position: static;
     }
+
+    gap: 3.2rem;
+
+    .logo {
+   
+    }
+
+    .order {
+      max-width: 21.6rem;
+      display: flex;
+      
+    }
+
 
   }
 `;

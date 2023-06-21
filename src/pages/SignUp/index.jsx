@@ -12,16 +12,19 @@ export function SignUp() {
       <Form>
         <h1>Crie sua conta</h1>
         <Input
+          hasATitle
           title={'Seu nome'}
           placeholder={'Exemplo: Maria da Silva'}
         />
 
         <Input
+          hasATitle
           title={'Email'}
           placeholder={'Exemplo: exemplo@exemplo.com.br'}
         />
 
         <Input
+          hasATitle
           title={'Senha'}
           placeholder={'No mínimo 6 caracteres'}
         />

@@ -12,11 +12,13 @@ export function SignIn() {
       <Form>
         <h1>Faça login</h1>
         <Input
+          hasATitle
           title={'Email'}
           placeholder={'Exemplo: exemplo@exemplo.com.br'}
         />
 
         <Input
+          hasATitle
           title={'Senha'}
           placeholder={'No mínimo 6 caracteres'}
         />

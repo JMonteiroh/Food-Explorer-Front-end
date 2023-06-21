@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
   height: 100vh;
 
   font-family: 'Roboto', sans-serif;
@@ -22,7 +23,7 @@ export const Form = styled.form`
   align-items: center;
   flex-direction: column;
   gap: 3.2rem;
-
+  min-width: 30rem;
   > h1 {
     display: none;
   }

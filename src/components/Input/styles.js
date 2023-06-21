@@ -19,10 +19,11 @@ export const InputBox = styled.div`
   width: 100%;
 
   display: flex;
-  flex-direction: column;
   background-color: ${({ theme }) => theme.colors.dark_900};
   color: ${({ theme }) => theme.colors.light_500};
   border-radius: .8rem;
+  padding: 1.2rem 1.4rem ;
+  gap: 1.4rem;
 
   > input {
     width: 100%;
@@ -31,7 +32,6 @@ export const InputBox = styled.div`
     font-weight: 400;
     font-size: 1.6rem;
   
-    padding: 1.2rem 1.2rem;
     background: transparent;
     border: 0;
     color: ${({ theme }) => theme.colors.light_500};

@@ -9,8 +9,8 @@ export const Container = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
   padding: 1.2rem 3.2rem;
-  gap: .8rem;
 
   border: none;
   border-radius: .5rem;

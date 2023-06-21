@@ -1,7 +1,9 @@
 import { Container, Content } from "./styles";
+import { FiSearch } from 'react-icons/fi'
 
 import navbar from '../../assets/navbar.svg'
 import receipt from '../../assets/receipt.svg'
+import signout from '../../assets/signout.svg'
 
 import { Logo } from "../Logo"
 import { Input } from "../Input"
@@ -18,14 +20,16 @@ export function Header() {
 
         <Logo size={0.8} />
 
-        <Input className='desktop' />
-
-        <Button className='desktop'  title={'Pedido'} />
-
         <div className="receipt mobile">
           <span>0</span>
           <ButtonIcon  image={receipt} alt="Botão de receipt"/>
         </div>
+
+        <Input icon={FiSearch} className='desktop' placeholder='Busque por pratos ou ingredientes' />
+
+        <Button image={receipt} className='desktop order'  title={'Pedido '} hasACounter />
+
+        <ButtonIcon className='desktop' image={signout} alt='Botão para sair.'/>
       </Content>
     </Container>
   )

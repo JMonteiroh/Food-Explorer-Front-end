@@ -9,6 +9,7 @@ export const Container = styled.div`
   place-content: center;
 
   gap: 7.6rem;
+  min-width: 30rem;
 
   @media (min-width: 768px){
     display: flex;
