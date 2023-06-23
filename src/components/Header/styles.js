@@ -49,10 +49,19 @@ export const Mobile = styled.div`
   gap: 1.6rem;
 
   > .logo {
-    img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   .polygon {
       width: 2.4rem;
       height: 2.4rem;
     }
+    /* .polygon::before {
+      width: 2.4rem;
+      height: 2.4rem;
+
+    } */
 
     h1 {
       font-size: 2.4rem;
