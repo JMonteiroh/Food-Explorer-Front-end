@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 import Polygon from '../../assets/polygon.svg'
 
-export function Logo({ size }) {
+export function Logo() {
   return (
-    <Container size={size} className="logo" >
+    <Container className="logo" >
       <img src={Polygon} />
       <h1>food explorer</h1>
     </Container>

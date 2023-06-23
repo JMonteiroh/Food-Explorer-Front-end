@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  min-width: fit-content;
   
   > img {
     height: 4.3rem;

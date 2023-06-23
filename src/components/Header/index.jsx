@@ -1,4 +1,4 @@
-import { Container, Content } from "./styles";
+import { Container, Content, Mobile, Desktop } from "./styles";
 import { FiSearch } from 'react-icons/fi'
 
 import navbar from '../../assets/navbar.svg'
@@ -16,20 +16,28 @@ export function Header() {
   return (
     <Container>
       <Content>
-        <ButtonIcon className='mobile' image={navbar} alt="Botão de navbar"/>
+        <Mobile className="mobile">
+          <ButtonIcon className='btn-navbar' image={navbar} alt="Botão de navbar"/>
 
-        <Logo size={0.8} />
+          <Logo />
 
-        <div className="receipt mobile">
-          <span>0</span>
-          <ButtonIcon  image={receipt} alt="Botão de receipt"/>
-        </div>
+          <div className="receipt">
+            <div className="counter">
+              <span>0</span>
+            </div>
+            <ButtonIcon className='btn-receipt' image={receipt} alt="Botão de receipt"/>
+          </div>
+        </Mobile>
 
-        <Input icon={FiSearch} className='desktop' placeholder='Busque por pratos ou ingredientes' />
+        <Desktop className="desktop">
+          <Logo />
+          
+          <Input icon={FiSearch} className='input' placeholder='Busque por pratos ou ingredientes' />
 
-        <Button image={receipt} className='desktop order'  title={'Pedido '} hasACounter />
+          <Button image={receipt} className='order'  title={'Pedido '} hasACounter />
 
-        <ButtonIcon className='desktop' image={signout} alt='Botão para sair.'/>
+          <ButtonIcon className='btn-signout' image={signout} alt='Botão para sair.'/>
+        </Desktop>
       </Content>
     </Container>
   )
