@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container } from './styles';
 
-export function Button({ image, alt, title, loading = false, hasACounter = false, ...rest}) {
+export function Button({ icon: Icon, title, size, loading = false, hasACounter = false, ...rest}) {
   const [ counter, setCounter ] = useState(0)
 
   return (
@@ -10,7 +10,7 @@ export function Button({ image, alt, title, loading = false, hasACounter = false
       disabled={loading}
       {...rest}
     >
-      <img src={image} alt={alt} />
+      { Icon && <Icon size={size} /> }
       { loading ? 'Carregando...' : title }
       { hasACounter ? `(${counter})` : null }
     </Container>

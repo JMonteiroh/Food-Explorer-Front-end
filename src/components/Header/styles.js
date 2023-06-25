@@ -47,21 +47,16 @@ export const Mobile = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 1.6rem;
+  grid-area: header;
+
+  > .btn-navbar {
+    color: ${({ theme }) => theme.colors.light_100};
+  }
 
   > .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-
-   .polygon {
-      width: 2.4rem;
-      height: 2.4rem;
-    }
-    /* .polygon::before {
-      width: 2.4rem;
-      height: 2.4rem;
-
-    } */
 
     h1 {
       font-size: 2.4rem;
@@ -96,8 +91,7 @@ export const Mobile = styled.div`
     }
 
     .btn-receipt {
-      width: 3.2rem;
-      height: 3.2rem;
+      color: ${({ theme }) => theme.colors.light_100};
     }
   }
 `;
@@ -120,16 +114,10 @@ export const Desktop = styled.div`
       width: 21.6rem;
       gap: 8px;
       flex-shrink: 0;
-
-      > img {
-        width: 3.2rem;
-        height: 3.2rem;
-      }
     }
 
     .btn-signout {
-      width: 3.2rem;
-      height: 3.2rem;
+      color: ${({ theme }) => theme.colors.light_100};
     }
   }
 `;

@@ -1,9 +1,6 @@
 import { Container, Content, Mobile, Desktop } from "./styles";
-import { FiSearch } from 'react-icons/fi'
-
-import navbar from '../../assets/navbar.svg'
-import receipt from '../../assets/receipt.svg'
-import signout from '../../assets/signout.svg'
+import { FiSearch, FiMenu } from 'react-icons/fi'
+import { PiReceipt, PiSignOut } from "react-icons/pi";
 
 import { Logo } from "../Logo"
 import { Input } from "../Input"
@@ -17,7 +14,7 @@ export function Header() {
     <Container>
       <Content>
         <Mobile className="mobile">
-          <ButtonIcon className='btn-navbar' image={navbar} alt="Botão de navbar"/>
+          <ButtonIcon className='btn-navbar' icon={FiMenu} size={32}/>
 
           <Logo />
 
@@ -25,7 +22,7 @@ export function Header() {
             <div className="counter">
               <span>0</span>
             </div>
-            <ButtonIcon className='btn-receipt' image={receipt} alt="Botão de receipt"/>
+            <ButtonIcon icon={PiReceipt}  size={32} className='btn-receipt'/>
           </div>
         </Mobile>
 
@@ -34,9 +31,9 @@ export function Header() {
           
           <Input icon={FiSearch} className='input' placeholder='Busque por pratos ou ingredientes' />
 
-          <Button image={receipt} className='order'  title={'Pedido '} hasACounter />
+          <Button icon={PiReceipt} size={24} className='order'  title={'Pedido '} hasACounter />
 
-          <ButtonIcon className='btn-signout' image={signout} alt='Botão para sair.'/>
+          <ButtonIcon className='btn-signout' icon={PiSignOut} size={32}/>
         </Desktop>
       </Content>
     </Container>

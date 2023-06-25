@@ -8,12 +8,13 @@ export const Container = styled.div`
   justify-content: space-evenly;
   padding: 2.4rem 0;
   background-color: ${({ theme }) => theme.colors.dark_600};
+  grid-area: footer;
 
   > .logo {
-    > .polygon {
+    > svg {
       width: 2.2rem;
       height: 1.8rem;
-      background-color: ${({ theme }) => theme.colors.light_700};
+      color: ${({ theme }) => theme.colors.light_700};
 
     }
 
