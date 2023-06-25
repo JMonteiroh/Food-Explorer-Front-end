@@ -6,19 +6,69 @@ export const Container = styled.div`
 
   display: grid;
   justify-items: center;
+  align-content: space-between;
   grid-template-areas: 
     'header'
     'content'
     'footer';  
  
 `;
+
 export const Content = styled.div`
   grid-area: content;
-  width: 100%
+  width: 100%;
+  display: grid;
+  
+
 
   .banner {
+    width: 100;
+    height: 12rem;
 
-    background: ${({ theme }) => theme.colors.gradient_200}
+    margin:  3.6rem;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+
+    border-radius: .3rem;
+    flex-shrink: 0;
+    
+
+    background: ${({ theme }) => theme.colors.gradient_200};
+
+    > img {
+      position: absolute;
+      bottom: 0;
+      left: -3.1rem;
+      display:flex ;
+      width: 19.1rem;
+      height: 14.9rem;
+      flex-shrink: 0;
+
+      opacity: 0.9;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding-right: 2rem;
+      gap: 1rem;
+
+      color: ${({ theme }) => theme.colors.light_300};
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.5rem;
+      
+      > h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      > p { 
+        font-size: 1.2rem;
+      }
+    }
   }
 
 `;

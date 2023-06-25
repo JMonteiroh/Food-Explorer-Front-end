@@ -14,9 +14,8 @@ export function Home() {
           <img src={macaron} alt="image of macarons and fruits" />
           <div>
             <h2>Sabores inigualáveis</h2>
-            <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+            <p>Sinta o cuidado do preparo com <br/>ingredientes selecionados</p>
           </div>
-
         </div>
       </Content>
       <Footer />
