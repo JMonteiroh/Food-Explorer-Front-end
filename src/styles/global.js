@@ -7,12 +7,30 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     font-size: 62.5%;
+    > .desktop {
+      display: none;
+      visibility: hidden;
+    }
+
+    @media (min-width: 768px) {
+      > .mobile {
+        display: none;
+        visibility: hidden;
+      }
+
+      > .desktop {
+        display: flex;
+        visibility: visible;
+      }
+    }
   }
 
   body {
     background-color: ${({ theme }) => theme.colors.dark_400};
     color: ${({ theme }) => theme.colors.light_300};
     -webkit-font-smoothing: antialiased;
+
+
   }
 
   a {

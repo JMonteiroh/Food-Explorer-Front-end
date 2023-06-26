@@ -18,19 +18,21 @@ export const Content = styled.div`
   grid-area: content;
   width: 100%;
   display: grid;
+  padding: 0 2.4rem;
+  gap: 2.4rem;
   
 
 
   .banner {
     width: 100;
     height: 12rem;
-
-    margin:  3.6rem;
-
+    
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     position: relative;
+    gap: 2.4rem;
+    margin-bottom: 4rem;
 
     border-radius: .3rem;
     flex-shrink: 0;
