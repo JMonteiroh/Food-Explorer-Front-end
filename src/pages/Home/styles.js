@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: grid;
   justify-items: center;
   align-content: space-between;
+
   grid-template-areas: 
     'header'
     'content'
@@ -15,7 +16,6 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  grid-area: content;
   width: 100%;
   display: grid;
   padding: 0 2.4rem;
@@ -32,7 +32,7 @@ export const Content = styled.div`
     align-items: center;
     position: relative;
     gap: 2.4rem;
-    margin-bottom: 4rem;
+    margin: 4.4rem 0;
 
     border-radius: .3rem;
     flex-shrink: 0;

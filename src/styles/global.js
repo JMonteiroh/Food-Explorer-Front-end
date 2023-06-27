@@ -7,6 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
 
     font-size: 62.5%;
+
     > .desktop {
       display: none;
       visibility: hidden;
@@ -29,13 +30,10 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.dark_400};
     color: ${({ theme }) => theme.colors.light_300};
     -webkit-font-smoothing: antialiased;
-
-
   }
 
   a {
     text-decoration: none;
-
   }
 
   button, a {

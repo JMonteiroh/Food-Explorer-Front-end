@@ -26,6 +26,12 @@ export function Home() {
           <Card />
           <Card />
         </Section>
+        <Section title="Pratos principais">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </Section>
       </Content>
       <Footer />
     </Container>

@@ -11,7 +11,7 @@ export const Container = styled.div`
   gap: 1.2rem;
 
   border: 1px solid ${({ theme }) => theme.colors.dark_300};
-  border-radius: 0%.8rem;
+  border-radius: .8rem;
   background: ${({ theme }) => theme.colors.dark_200};
 
   > .favorite {
