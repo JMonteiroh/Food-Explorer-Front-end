@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 14.4rem;
+  z-index: 999;
+  position: fixed;
+  top: 0;
 
 
   background-color: ${({ theme }) => theme.colors.dark_700};
@@ -10,7 +13,7 @@ export const Container = styled.div`
   display: flex;
   grid-area: header;
   
-  `;
+`;
 
 export const Content = styled.div`
   width: 100%;
@@ -18,6 +21,7 @@ export const Content = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 6rem 0 2.9rem;
+
   
   > .desktop {
     display: none;

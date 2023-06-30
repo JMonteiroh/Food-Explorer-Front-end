@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 
   display: grid;
   justify-items: center;
@@ -16,15 +16,16 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 100%;
-  display: grid;
-  padding: 0 2.4rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2.4rem;
-  
-
+  margin-top: 17rem;
+  grid-area: content;
 
   .banner {
-    width: 100;
+    width: 85vw;
     height: 12rem;
     
     display: flex;

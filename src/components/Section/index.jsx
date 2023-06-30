@@ -1,4 +1,4 @@
-import { Container, InnerContainer } from "./styles";
+import { Container, Wrapper, Content, Slider } from "./styles";
 
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
@@ -8,13 +8,16 @@ export function Section({ title, children }) {
   return (
     <Container>
         <h2>{title}</h2>
-      <div className="teste">
-        <InnerContainer>
-          <ButtonIcon className="desktop" size={24} icon={AiOutlineLeft}/>
-          {children}
-          <ButtonIcon className="desktop" size={24} icon={AiOutlineRight} />
-        </InnerContainer>
-      </div>
+
+      <Wrapper>
+        <Content>
+          <ButtonIcon className="desktop arrow-left" size={24} icon={AiOutlineLeft}/>
+           <Slider>
+            {children}
+           </Slider>
+          <ButtonIcon className="desktop arrow-right" size={24} icon={AiOutlineRight} />
+        </Content>
+      </Wrapper>
     </Container>
   );
 }
