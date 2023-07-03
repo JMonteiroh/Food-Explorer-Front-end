@@ -14,9 +14,9 @@ export function Home() {
       <Content>
         <div className="banner">
           <img src={macaron} alt="image of macarons and fruits" />
-          <div>
+          <div className="letters">
             <h2>Sabores inigualáveis</h2>
-            <p>Sinta o cuidado do preparo com <br/>ingredientes selecionados</p>
+            <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export function Home() {
           <Card />
           <Card />
         </Section>
-        <Section title="Pratos principais">
+        <Section title="Bebidas">
           <Card />
           <Card />
           <Card />

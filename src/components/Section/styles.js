@@ -4,9 +4,9 @@ export const Container = styled.div`
   width: 95vw;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
   
-  margin-bottom: 2.4rem;
+  margin-bottom: 10rem;
 
   > h2 {
     font-size: 1.8rem;
@@ -41,7 +41,7 @@ export const Content = styled.div`
     color: ${({ theme }) => theme.colors.light_100};
     z-index: 999;
     position: absolute;
-    padding: 0 1.7rem 0;
+    padding: 0 .5rem 0;
     top: 45%;
   }
   

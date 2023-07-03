@@ -13,6 +13,22 @@ export default createGlobalStyle`
       visibility: hidden;
     }
 
+    ::-webkit-scrollbar {
+      width: .5rem;
+      height: .5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${({ theme }) => theme.colors.dark_900};
+      opacity: 0.8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.cake_100};
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
     @media (min-width: 768px) {
       > .mobile {
         display: none;

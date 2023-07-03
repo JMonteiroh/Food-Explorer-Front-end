@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
   min-width: 21rem;
 
   position: relative;

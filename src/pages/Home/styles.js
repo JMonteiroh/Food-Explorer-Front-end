@@ -26,7 +26,7 @@ export const Content = styled.div`
 
   .banner {
     width: 85vw;
-    height: 12rem;
+    height: 13rem;
     
     display: flex;
     flex-direction: row-reverse;
@@ -53,10 +53,10 @@ export const Content = styled.div`
       opacity: 0.9;
     }
 
-    > div {
+    > .letters {
+      width: 21rem;
       display: flex;
       flex-direction: column;
-      padding-right: 2rem;
       gap: 1rem;
 
       color: ${({ theme }) => theme.colors.light_300};
@@ -70,6 +70,40 @@ export const Content = styled.div`
 
       > p { 
         font-size: 1.2rem;
+        font-weight: 400;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .banner {
+      background: transparent;
+      width: 85vw;
+      height: 26rem;
+      margin: 0;
+
+      > img {
+        bottom: -5rem;
+        left: -23rem;
+        width: 73rem;
+        height: 30rem;
+        flex-shrink: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
+
+      }
+      .letters {
+        width: 44rem;
+        padding-right: 0rem;
+        
+        > h2 {
+          font-size: 4rem;
+          font-weight: 500;
+        }
+
+        > p {
+          font-size: 1.4rem;
+        }
       }
     }
   }
