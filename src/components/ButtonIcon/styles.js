@@ -14,7 +14,7 @@ export const Container = styled.button`
 
   > span {
     color: ${({ theme }) => theme.colors.light_300};
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 500;
