@@ -9,6 +9,7 @@ export const Container = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: .8rem;
 
   padding: 1.2rem 3.2rem;
 
@@ -19,6 +20,7 @@ export const Container = styled.button`
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 2.4rem;
+
 
 
 

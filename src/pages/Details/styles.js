@@ -23,17 +23,24 @@ export const Content = styled.main`
   grid-area: content;
   width: 100%;
   
-  padding: 20rem 5.6rem 10rem;
+  padding: 25rem 5.6rem 10rem;
 
   > .back {
     position: absolute;
     left: 5.6rem;
-    top: 17rem;
+    top: 20rem;
   }
+
+  @media (min-width: 768px) {
+    padding: 25rem 12.1rem 0;
+  }
+
 
   `;
 
 export const Descriptions = styled.div`
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -45,52 +52,117 @@ export const Descriptions = styled.div`
   
     border-radius: 50%;
   }
-  > .title {
-    color: ${({ theme }) => theme.colors.light_300};;
-    font-family: Poppins;
-    font-size: 2.7rem;
-    font-weight: 500;
-    line-height: 140%;
-
-    margin-bottom: .8rem;
-  }
-  
-  .description {
-    color: ${({ theme }) => theme.colors.light_300};
-
-    text-align: center;
-    font-family: Poppins;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    margin-bottom: .8rem;
-  }
-  
-  > .ingredients {
+  > .informations {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2.4rem;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
 
-    > span {
-      display: flex;
-      padding: .4rem .8rem;
-      justify-content: center;
-      align-items: center;
-      gap: .8rem;
+      > .title {
+        align-items: center;
+        color: ${({ theme }) => theme.colors.light_300};;
+        font-family: Poppins;
+        font-size: 2.7rem;
+        font-weight: 500;
+        line-height: 140%;
+    
+        margin-bottom: .8rem;
+      }
+      
+      > .description {
+        color: ${({ theme }) => theme.colors.light_300};
+    
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: .8rem;
+      }
+      
+      > .ingredients {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.4rem;
+        justify-content: center;
+    
+        > span {
+          display: flex;
+          padding: .4rem .8rem;
+          justify-content: center;
+          align-items: center;
+          gap: .8rem;
+    
+          border-radius: .5rem;
+          background-color: ${({ theme }) => theme.colors.dark_1000};
+    
+          color: ${({ theme }) => theme.colors.light_100};
+          text-align: center;
+    
+          font-family: Poppins;
+          font-size: 1.4rem;
+          font-weight: 500;
+          line-height: 2.4rem;
+        }
+      }
+      
+      > .quantity {
+          display: flex;
+          align-items: center;
+          gap:1.4rem;
+      
+          margin-top: 4.6rem;
+      
+          > .value {
+            font-size: 2.2rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            line-height: 160%;
+            color: ${({ theme }) => theme.colors.light_300};
+          }
+      }
+  }
 
-      border-radius: .5rem;
-      background-color: ${({ theme }) => theme.colors.dark_1000};
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
 
-      color: ${({ theme }) => theme.colors.light_100};
-      text-align: center;
-
-      font-family: Poppins;
-      font-size: 1.4rem;
-      font-weight: 500;
-      line-height: 2.4rem;
+    > img {
+     width: 39rem;
+     height: 39rem;
+     justify-content: center;
+     align-items: center;
     }
+
+    > .informations {
+      align-items: start;
+
+      > .title {
+        text-align: start;
+        font-size: 4rem;
+      }
+
+      > .description {
+        text-align: start;
+        font-size: 2.4rem;
+      }
+
+      > .ingredients {
+        justify-content: start;
+      }
+
+      > .quantity {
+        > .ask {
+          svg {
+            display: none;
+          }
+        }
+      }
+    }
+
+    
   }
 
 `;
