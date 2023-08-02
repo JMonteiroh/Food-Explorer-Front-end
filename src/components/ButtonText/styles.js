@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.button`
   width: 100%;
 
-  color: ${({ theme, isActive }) => isActive? theme.colors.tomato_300 : theme.colors.light_100};
+  color: ${({ theme, isred }) => (isred ? theme.colors.tomato_300 : theme.colors.light_100)};
 
   background: none;
   border: none;
