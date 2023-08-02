@@ -5,7 +5,12 @@ import { Input } from '../../components/Input'
 import { Button } from '../../components/Button'
 import { ButtonText } from "../../components/ButtonText";
 
+import { useNavigate } from "react-router-dom";
+
 export function SignIn() {
+
+  const navigate = useNavigate()
+
   return (
     <Container>
       <Logo />
@@ -25,7 +30,7 @@ export function SignIn() {
 
         <Button title={'Entrar'} />
 
-        <ButtonText title={'Criar conta'} />
+        <ButtonText onClick={() => navigate('/register')} title={'Criar conta'} />
 
       </Form>
     </Container>
