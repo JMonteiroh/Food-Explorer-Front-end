@@ -1,10 +1,9 @@
 import { Container } from './styles';
 
-export function ButtonText({ title, isred = false, ...rest}) {
+export function ButtonText({ title, ...rest}) {
   return (
     <Container
       type='button'
-      isred={isred}
       {...rest}
     >
       { title }
