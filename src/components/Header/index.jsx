@@ -6,10 +6,14 @@ import { Logo } from "../Logo"
 import { Input } from "../Input"
 import { Button } from "../Button";
 import { ButtonIcon } from "../ButtonIcon";
+import { useAuth } from "../../hooks/auth";
 
 
 
 export function Header() {
+
+  const { signOut } = useAuth();
+
   return (
     <Container>
       <Content>
@@ -33,7 +37,7 @@ export function Header() {
 
           <Button icon={PiReceipt} size={24} className='order'  title={'Pedido '} hasACounter />
 
-          <ButtonIcon className='btn-signout' icon={PiSignOut} size={32}/>
+          <ButtonIcon onClick={signOut} className='btn-signout' icon={PiSignOut} size={32}/>
         </Desktop>
       </Content>
     </Container>
