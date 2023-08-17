@@ -15,6 +15,13 @@ export const Container = styled.div`
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 3.7rem;
+
+    > span {
+      color: ${({ theme }) => theme.colors.cake_200};
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 160%;
+    }
   }
 
 `;
