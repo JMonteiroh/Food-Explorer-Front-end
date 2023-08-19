@@ -30,11 +30,11 @@ export function HeaderAdmin() {
         </Mobile>
 
         <Desktop className="desktop">
-          <Logo />
+          <Logo isAdmin  />
           
           <Input icon={FiSearch} className='input' placeholder='Busque por pratos ou ingredientes' />
 
-          <Button icon={PiReceipt} size={24} className='order'  title={'Pedido '} hasACounter />
+          <Button  className='new-plate'  title={'Novo prato'} />
 
           <ButtonIcon onClick={signOut} className='btn-signout' icon={PiSignOut} size={32}/>
         </Desktop>

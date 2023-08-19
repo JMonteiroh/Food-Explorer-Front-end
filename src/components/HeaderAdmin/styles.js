@@ -50,7 +50,7 @@ export const Mobile = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 1.6rem;
   grid-area: header;
 
@@ -114,15 +114,14 @@ export const Desktop = styled.div`
       flex: 1 0 0;
     }
 
-    .order {
-      display: flex;
-      width: 21.6rem;
-      gap: 8px;
-      flex-shrink: 0;
+    .new-plate {
+      max-width: 21.6rem;
+      padding: 1.6rem;
     }
 
     .btn-signout {
       color: ${({ theme }) => theme.colors.light_100};
     }
+    
   }
 `;

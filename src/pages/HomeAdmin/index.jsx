@@ -3,8 +3,9 @@ import { Container, Content } from "./styles";
 import macaron from "../../assets/macaron.svg"
 
 import { HeaderAdmin } from "../../components/HeaderAdmin";
+import { Footer } from "../../components/Footer"
 import { Section } from "../../components/Section";
-import { Card } from "../../components/Card";
+import { CardAdmin } from "../../components/CardAdmin";
 
 export function HomeAdmin() {
   return (
@@ -20,26 +21,27 @@ export function HomeAdmin() {
         </div>
 
         <Section title="Refeições">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
         </Section>
         <Section title="Pratos principais">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
         </Section>
         <Section title="Bebidas">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
+          <CardAdmin />
         </Section>
       </Content>
+      <Footer />
     </Container>
   )
 }

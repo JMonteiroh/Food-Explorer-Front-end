@@ -6,7 +6,7 @@ export const Container = styled.button`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2.4rem;
+  padding: 7rem 2.4rem;
   align-items: center;
   gap: 1.2rem;
 
@@ -47,7 +47,7 @@ export const Container = styled.button`
       font-size: 1.2rem;
     }
   }
-
+  
   > .price {
     color: ${({ theme }) => theme.colors.cake_200};
     text-align: center;
@@ -55,20 +55,6 @@ export const Container = styled.button`
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     line-height: 100%;
-  }
-
-  > .quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:1.4rem;
-
-    > .value {
-      font-size: 1.6rem;
-      font-family: 'Roboto', sans-serif;
-      line-height: 100%;
-      color: ${({ theme }) => theme.colors.light_300};
-    }
   }
 
 `;
