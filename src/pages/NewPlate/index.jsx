@@ -12,7 +12,8 @@ export function NewPlate() {
     <Container>
       <HeaderAdmin />
       <Content>
-        <ButtonIcon className="back" icon={AiOutlineLeft} size={24} title={'Voltar'} />
+        <h2>Novo prato</h2>
+        <ButtonIcon className="btn-back" icon={AiOutlineLeft} size={16} title={'Voltar'} />
         <Input />
       </Content>
 
