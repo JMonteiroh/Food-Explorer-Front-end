@@ -45,4 +45,21 @@ export const InputBox = styled.div`
     margin-left: 1.6rem;
   }
 
+  .inpt-file {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .inpt-title {
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px
+    }
+    input{
+      display: none;
+    }
+  }
+
 `;
