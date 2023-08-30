@@ -22,7 +22,7 @@ export const InputBox = styled.div`
   background-color: ${({ theme }) => theme.colors.dark_900};
   color: ${({ theme }) => theme.colors.light_500};
   border-radius: .8rem;
-  padding: 1.2rem 1.4rem ;
+  padding: 1.2rem 1.4rem;
   gap: 1.4rem;
 
   > input {
@@ -49,16 +49,28 @@ export const InputBox = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+    color: ${({ theme }) => theme.colors.light_100};
+    margin: -.3rem 0rem;
+    
 
     .inpt-title {
       font-family: Poppins;
-      font-size: 14px;
+      font-size: 1.4rem;
       font-style: normal;
       font-weight: 500;
-      line-height: 24px
+      line-height: 2.4rem;
+      color: ${({ theme }) => theme.colors.light_100};
     }
+
     input{
       display: none;
+    }
+
+    label {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-end;
+      padding-left: 1.8rem;
     }
   }
 
