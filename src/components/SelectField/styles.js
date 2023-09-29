@@ -36,14 +36,16 @@ export const MenuBox = styled.div`
     color: ${({ theme }) => theme.colors.light_400};
   }
 
+
   > .dropdown-options {
     width: 95%;
     display: block;
     position: absolute;
-    opacity: .3;
     z-index: 1;
     margin-top: 10.5rem;
-    border-radius: .5rem;  
+    border-radius: .5rem;
+    background-color: ${({ theme }) => theme.colors.dark_900};
+    padding: 1.6rem;
 
     ul {
       display: flex;

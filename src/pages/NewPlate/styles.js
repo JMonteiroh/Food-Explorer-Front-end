@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+
 
   padding: 16rem 3.2rem 0;
 
@@ -19,8 +19,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   grid-area: "content";
   gap: 2.4rem;
+
+  margin-bottom: 9rem;
+
+
   > h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 3.2rem;
@@ -31,6 +36,7 @@ export const Content = styled.div`
   }
 
   > .btn-back {
+    width: fit-content;
     > span {
       font-family: Poppins;
       font-size: 1.6rem;
@@ -39,6 +45,14 @@ export const Content = styled.div`
 
   .file-inpt {
     display: none;
+  }
+
+  .bg-inpt {
+    background-color: ${({ theme }) => theme.colors.dark_800};
+  }
+
+  .save-plate {
+    background-color: ${({ theme }) => theme.colors.tomato_400 };
   }
 
 `;

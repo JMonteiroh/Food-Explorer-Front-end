@@ -1,11 +1,11 @@
 import { AiOutlineUpload } from 'react-icons/ai';
 import { Container, InputBox } from './styles';
 
-export function Input({icon : Icon, hasATitle, type, title, ...rest}) {
+export function Input({ icon: Icon, hasATitle, type, title, ...rest}) {
   return (
     <Container {...rest}>
       <h3>{hasATitle ? title : null}</h3>
-      <InputBox>
+      <InputBox className='bg-inpt'>
         {type === 'file' ? (
           <div className='inpt-file'>
             <label htmlFor="fileInput">
