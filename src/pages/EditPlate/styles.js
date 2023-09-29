@@ -50,9 +50,19 @@ export const Content = styled.div`
   .bg-inpt {
     background-color: ${({ theme }) => theme.colors.dark_800};
   }
+  > .btns-edit {
+    display: flex;
+    gap: 1.9rem;
 
-  .save-plate {
-    background-color: ${({ theme }) => theme.colors.tomato_400 };
+      .save-plate {
+        background-color: ${({ theme }) => theme.colors.tomato_400 };
+        padding: 1.2rem 2.4rem;
+      }
+    
+      .delete-plate {
+        background-color: ${({ theme }) => theme.colors.dark_800 };
+        padding: 1.2rem 2.4rem;
+      }
   }
 
 `;

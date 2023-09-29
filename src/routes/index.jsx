@@ -9,9 +9,7 @@ import { AdminRoutes } from "./admin.routes";
 export function Routes() {
 
   const { user } = useAuth();
-
-  console.log(user)
-
+  
   if(user){
     if(user.isAdmin == true) {
       return (
