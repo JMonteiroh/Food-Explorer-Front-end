@@ -17,9 +17,9 @@ export function EditPlate() {
     <Container>
       <HeaderAdmin />
       <Content>
-        <h2>Editar prato</h2>
-        
         <ButtonIcon className="btn-back" icon={AiOutlineLeft} size={16} title={'Voltar'} />
+
+        <h2>Editar prato</h2>
 
         <Input hasATitle  icon={AiOutlineUpload} type={'file'} title={'Imagem do prato'} placeholder={'Ex: Salada Ceasar'} />
         

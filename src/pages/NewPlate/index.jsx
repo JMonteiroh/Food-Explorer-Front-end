@@ -17,15 +17,31 @@ export function NewPlate() {
     <Container>
       <HeaderAdmin />
       <Content>
-        <h2>Novo prato</h2>
-        
         <ButtonIcon className="btn-back" icon={AiOutlineLeft} size={16} title={'Voltar'} />
-
-        <Input hasATitle  icon={AiOutlineUpload} type={'file'} title={'Imagem do prato'} placeholder={'Ex: Salada Ceasar'} />
         
-        <Input hasATitle type={'text'} title={'Nome'} placeholder={'Ex: Salada Ceasar'} />
+        <h2>Novo prato</h2>
+        <div className="box-1">
+          <Input 
+            hasATitle  
+            className={'file-btn'}
+            icon={AiOutlineUpload} 
+            type={'file'} 
+            title={'Imagem do prato'} 
+            placeholder={'Ex: Salada Ceasar'} 
+          />
+          
+          <Input 
+            hasATitle 
+            type={'text'} 
+            title={'Nome'} 
+            placeholder={'Ex: Salada Ceasar'}
+          />
 
-        <SelectField title={"Categoria"} />
+          <SelectField 
+            title={"Categoria"}
+          />
+
+        </div>
 
         <IngredientBox>
           <Ingredients />
@@ -33,11 +49,22 @@ export function NewPlate() {
           <Ingredients isNew />
         </IngredientBox>
 
-        <Input hasATitle type={'text'} title={'Preço'} placeholder={'R$ 00,00'}/>
+        <Input 
+          hasATitle 
+          type={'text'} 
+          title={'Preço'} 
+          placeholder={'R$ 00,00'}
+        />
 
-        <Textarea title={'Descrição'} placeholder={`Fale brevemente sobre o prato, seus ingredientes e composição.`} />
+        <Textarea 
+          title={'Descrição'} 
+          placeholder={`Fale brevemente sobre o prato, seus ingredientes e composição.`}
+        />
       
-        <Button className={'save-plate'} title={'Salvar prato'}/>
+        <Button 
+          className={'save-plate'} 
+          title={'Salvar prato'}
+        />
 
       </Content>
 

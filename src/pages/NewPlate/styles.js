@@ -55,4 +55,21 @@ export const Content = styled.div`
     background-color: ${({ theme }) => theme.colors.tomato_400 };
   }
 
+  .box-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  @media (min-width: 768px) {
+    .box-1 {
+      flex-direction: row;
+
+    }
+
+    .file-btn {
+      max-width:21.5rem ;
+    }
+  }
+
 `;

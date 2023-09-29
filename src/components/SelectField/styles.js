@@ -15,9 +15,8 @@ export const Container = styled.div`
   `;
 
 export const MenuBox = styled.div`
-  min-height: 6rem;
   display: flex;
-  padding: 1.6rem;
+  padding: .9rem 1.4rem;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -38,14 +37,17 @@ export const MenuBox = styled.div`
 
 
   > .dropdown-options {
-    width: 95%;
+    width: 100%;
     display: block;
     position: absolute;
     z-index: 1;
-    margin-top: 10.5rem;
+    margin-top: 13.7rem;
+    left: 0;
     border-radius: .5rem;
     background-color: ${({ theme }) => theme.colors.dark_900};
-    padding: 1.6rem;
+    padding: .9rem 1.4rem;
+
+    border: 1px solid ${({ theme }) => theme.colors.light_600};
 
     ul {
       display: flex;
@@ -61,9 +63,9 @@ export const MenuBox = styled.div`
         cursor: pointer;
         line-height: 3rem;
 
-        border: 1px solid #ccc;
+        border-bottom: 1px solid ${({ theme }) => theme.colors.light_600};
         border-radius: .5rem;
-        padding-left: 5rem;
+        padding-left: 1rem;
       }
     }
   }

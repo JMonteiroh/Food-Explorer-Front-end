@@ -70,7 +70,6 @@ export const InputBox = styled.div`
       display: flex;
       gap: .8rem;
       align-items: flex-end;
-      padding-left: 1.8rem;
     }
   }
 
