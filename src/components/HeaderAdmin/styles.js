@@ -107,16 +107,23 @@ export const Desktop = styled.div`
     display: flex;
     align-items: center;
     gap: 3.2rem;
-    justify-content: space-evenly;
-    padding: 2.4rem 12.6rem;
+    padding: 2.4rem 3.6rem;
+
+    .logo-desk {
+      flex: 1 0 0 ;
+    }
     
     .input {
       flex: 1 0 0;
+      h3 {
+        visibility: hidden;
+        display: none;
+      }
     }
 
     .new-plate {
       max-width: 21.6rem;
-      padding: 1.6rem;
+      max-height: 4.3rem;
     }
 
     .btn-signout {

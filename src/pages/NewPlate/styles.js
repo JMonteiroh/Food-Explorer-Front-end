@@ -61,10 +61,20 @@ export const Content = styled.div`
     gap: 2.4rem;
   }
 
+  .box-2 {
+    display: grid;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
   @media (min-width: 768px) {
     .box-1 {
       flex-direction: row;
 
+    }
+
+    .box-2 {
+      grid-template-columns: 4fr 1fr;
     }
 
     .file-btn {

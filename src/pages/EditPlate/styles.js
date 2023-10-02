@@ -25,7 +25,6 @@ export const Content = styled.div`
 
   margin-bottom: 10.3rem;
 
-
   > h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 3.2rem;
@@ -50,7 +49,8 @@ export const Content = styled.div`
   .bg-inpt {
     background-color: ${({ theme }) => theme.colors.dark_800};
   }
-  > .btns-edit {
+
+  .btns-edit {
     display: flex;
     gap: 1.9rem;
 
@@ -64,5 +64,39 @@ export const Content = styled.div`
         padding: 1.2rem 2.4rem;
       }
   }
+
+  .box-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .box-2 {
+    display: grid;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  @media (min-width: 768px) {
+    .box-1 {
+      flex-direction: row;
+
+    }
+
+    .box-2 {
+      grid-template-columns: 4fr 1fr;
+    }
+
+    .file-btn {
+      max-width:21.5rem ;
+    }
+
+    .btns-edit {
+      margin-left: 52.6rem ;
+      width: 45%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  } 
 
 `;

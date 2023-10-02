@@ -42,19 +42,21 @@ export function NewPlate() {
           />
 
         </div>
+        <div className="box-2">
+          <IngredientBox>
+            <Ingredients />
+            <Ingredients />
+            <Ingredients isNew />
+          </IngredientBox>
 
-        <IngredientBox>
-          <Ingredients />
-          <Ingredients />
-          <Ingredients isNew />
-        </IngredientBox>
-
-        <Input 
-          hasATitle 
-          type={'text'} 
-          title={'Preço'} 
-          placeholder={'R$ 00,00'}
-        />
+          <Input 
+            hasATitle
+            className={'inpt-price'} 
+            type={'text'} 
+            title={'Preço'} 
+            placeholder={'R$ 00,00'}
+          />
+        </div>
 
         <Textarea 
           title={'Descrição'} 

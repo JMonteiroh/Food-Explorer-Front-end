@@ -1,9 +1,12 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 export function IngredientBox({ children }) {
   return (
     <Container>
-      {children}
+      <h2>Ingredientes</h2>
+      <Content>
+        {children}
+      </Content>
     </Container>
   )
 }
