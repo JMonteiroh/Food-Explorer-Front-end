@@ -12,7 +12,21 @@ import { SelectField } from "../../components/SelectField";
 import { Ingredients } from "../../components/Ingredients";
 import { IngredientBox } from "../../components/IngredientBox";
 
+import { useState } from "react";
+
 export function NewPlate() {
+  const [ ingredients, setIngredients ] = useState([]);
+  const [ newIngredient, setNewIngredient ] = useState('');
+
+  function handleAddIngredient() {
+    setIngredients(prevState => [...prevState, newIngredient])
+    setNewIngredient('')
+  }
+
+  function handleRemoveIngredient(deleted) {
+    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted))
+
+  }
   return (
     <Container>
       <HeaderAdmin />
@@ -44,9 +58,21 @@ export function NewPlate() {
         </div>
         <div className="box-2">
           <IngredientBox>
-            <Ingredients />
-            <Ingredients />
-            <Ingredients isNew />
+          {
+            ingredients.map((ingredient, index) => (
+              <Ingredients 
+                key={String(index)}
+                value={ingredient}
+                onClick={() => handleRemoveIngredient(ingredient)}
+              />
+            ))
+          }
+            <Ingredients 
+              isNew
+              onChange={e => setNewIngredient(e.target.value)}
+              value={newIngredient}
+              onClick={handleAddIngredient()}
+             />
           </IngredientBox>
 
           <Input 

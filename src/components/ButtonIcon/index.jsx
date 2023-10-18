@@ -6,8 +6,8 @@ export function ButtonIcon({ icon: Icon, title ,size , ...rest}) {
       type='button'
       {...rest}
     >
-    { Icon && <Icon size={size} /> }
-    <span>{ title }</span>
+      { Icon && <Icon size={size} /> }
+      <span>{ title }</span>
     </Container>
   )
 }
