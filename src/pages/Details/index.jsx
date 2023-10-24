@@ -31,7 +31,8 @@ export function Details() {
 
   const buttonTitle = windowWidth >= 768 ? 'Incluir - R$ 25,00' : 'Pedir - R$ 25,00';
   
-  const [ data, setData ] = useState(null);
+  const [ data, setData ] = useState([]);
+  const [ ingredients, setIngredients ] = useState([]);
 
   const params = useParams();
   const navigate = useNavigate();
@@ -41,67 +42,70 @@ export function Details() {
   }
 
   useEffect(() => {
-    async function fetchNote() {
+    async function fetchPlate() {
       const response = await api.get(`/plates/${params.id}`);
 
       setData(response.data)
     }
+
+    fetchPlate();
+  }, [])
+
+  useEffect(() => {
+    async function fetchIngredients () {
+      const response = await api.get("/ingredients");
+      setIngredients(response.data)
+
+      console.log(response.data)
+    }
+
+    fetchIngredients();
   }, [])
 
   return (
     <Container>
       <Header />
 
-      {
-        data && 
       <Content>
-        <ButtonIcon className="back" icon={AiOutlineLeft} size={24} title={'Voltar'} onClick={handleBack()} />
-        <Descriptions>
-          <img src={Image} alt="Foto do prato" />
+        <ButtonIcon className="back" icon={AiOutlineLeft} size={24} title={'Voltar'} onClick={handleBack} />
+        {
+          data && 
+          <Descriptions>
+            <img src={data.image} alt="Foto do prato" />
 
-          <div className="informations">
-              <h2 className="title">{data.title}</h2>
+            <div className="informations">
+                <h2 className="title">{data.name}</h2>
 
-              <p className="description" >
-                Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.
-              </p>
+                <p className="description" >
+                  {data.description}
+                </p>
 
-              <div className="ingredients">
-                <span>
-                  alface
-                </span>
-                <span>
-                  cebola
-                </span>
-                <span>
-                  pão naan
-                </span>
-                <span>
-                  pepino
-                </span>
-                <span>
-                  rabanete
-                </span>
-                <span>
-                  Tomate
-                </span>
+                  {
+                    data.ingredients &&
+                      <div className="ingredients">
+                        { 
+                          data.ingredients.map(ingredient => (
+                            <span key={String(ingredient.id)}>{ingredient.name}</span>
+                          ))
+                        }
+                      </div>
+                  }
+
+                <div className="quantity">
+                  <ButtonIcon className="minus" icon={AiOutlineMinus} size={27} />
+
+                  <span className="value">01</span>
+
+                  <ButtonIcon className="plus" icon={AiOutlinePlus} size={27}/>
+
+                  <Button className="ask" icon={PiReceipt} size={22} title={buttonTitle} />
+
+                </div>
               </div>
 
-              <div className="quantity">
-                <ButtonIcon className="minus" icon={AiOutlineMinus} size={27} />
-
-                <span className="value">01</span>
-
-                <ButtonIcon className="plus" icon={AiOutlinePlus} size={27}/>
-
-                <Button className="ask" icon={PiReceipt} size={22} title={buttonTitle} />
-
-              </div>
-            </div>
-
-          </Descriptions>
+            </Descriptions>
+        }
         </Content>
-      }
       <Footer />
     </Container>
   )

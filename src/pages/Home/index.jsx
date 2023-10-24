@@ -15,7 +15,9 @@ import { api } from '../../service/api';
 export function Home() {
   const [ search, setSearch ] = useState("");
 
-  const [ plates, setPlates ] = useState([])
+  const [ platesMeals, setPlatesMeals ] = useState([])
+  const [ platesDrinks, setPlatesDrinks ] = useState([])
+  const [ platesDesserts, setPlatesDesserts ] = useState([])
 
 
   const navigate = useNavigate();
@@ -27,15 +29,28 @@ export function Home() {
   }
 
   useEffect(() => {
-    async function fetchPlates() {
-      const category = "bebidas"
-      const response = await api.get(`/plates?name=${search}&category${category}`);
-      console.log(response.data)
-      setPlates(response.data);
-    }
+    async function fetchPlatesMeals() {
+        const category = "refeições";
+        const response = await api.get(`/plates?name=${search}&category=${category}`);
+        setPlatesMeals(response.data);
+      }
+      async function fetchPlatesDrinks() {
+        const category = "bebidas";
+        const response = await api.get(`/plates?name=${search}&category=${category}`);
+        setPlatesDrinks(response.data);
+      }
+      
+      async function fetchPlatesDesserts() {
+        const category = "doces";
+        const response = await api.get(`/plates?name=${search}&category=${category}`);
+        setPlatesDesserts(response.data);
+        console.log(response.data)
+      }
 
+    fetchPlatesMeals();
+    fetchPlatesDrinks();
+    fetchPlatesDesserts();
 
-    fetchPlates();
 
   },[search])
 
@@ -53,7 +68,7 @@ export function Home() {
 
         <Section title="Refeições">
           {
-            plates.map(plate => (
+            platesMeals.map(plate => (
               <Card 
                 key={String(plate.id)}
                 data={plate}
@@ -62,17 +77,27 @@ export function Home() {
             ))
           }
         </Section>
-        <Section title="Pratos principais">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+        <Section title="Sobremesas">
+          {
+            platesDesserts.map(plate => (
+              <Card 
+                key={String(plate.id)}
+                data={plate}
+                onClick={() => handleDetails(plate.id)}
+              />
+            ))
+          }
         </Section>
         <Section title="Bebidas">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {
+            platesDrinks.map(plate => (
+              <Card 
+                key={String(plate.id)}
+                data={plate}
+                onClick={() => handleDetails(plate.id)}
+              />
+            ))
+          }
         </Section>
       </Content>
       <Footer />

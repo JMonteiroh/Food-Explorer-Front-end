@@ -69,4 +69,21 @@ function useAuth() {
   return context;
 }
 
+async function updateImagePlate({ plate, plateFile }) {
+  try {
+    if(plateFile) {
+      const fileUploadForm = new FormData();
+      fileUploadForm.append('image', plateFile);
+
+      const response = await api.patch("/plates/image", fileUploadForm);
+      
+      plate.image = response.data.image;
+    }
+
+  } catch (error) {
+    console.error(error)
+  }
+
+}
+
 export { AuthProvider, useAuth };
