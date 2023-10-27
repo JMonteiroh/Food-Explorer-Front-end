@@ -23,37 +23,33 @@ export function Home() {
   const navigate = useNavigate();
 
 
-  function handleDetails(id) {
-    navigate(`/details/${id}`);
 
+  async function fetchPlatesMeals() {
+      const category = "refeições";
+      const response = await api.get(`/plates?name=${search}&category=${category}`);
+      setPlatesMeals(response.data);
+    }
+  async function fetchPlatesDrinks() {
+    const category = "bebidas";
+    const response = await api.get(`/plates?name=${search}&category=${category}`);
+    setPlatesDrinks(response.data);
+  }
+  
+  async function fetchPlatesDesserts() {
+    const category = "doces";
+    const response = await api.get(`/plates?name=${search}&category=${category}`);
+    setPlatesDesserts(response.data);
   }
 
   useEffect(() => {
-    async function fetchPlatesMeals() {
-        const category = "refeições";
-        const response = await api.get(`/plates?name=${search}&category=${category}`);
-        setPlatesMeals(response.data);
-      }
-      async function fetchPlatesDrinks() {
-        const category = "bebidas";
-        const response = await api.get(`/plates?name=${search}&category=${category}`);
-        setPlatesDrinks(response.data);
-      }
-      
-      async function fetchPlatesDesserts() {
-        const category = "doces";
-        const response = await api.get(`/plates?name=${search}&category=${category}`);
-        setPlatesDesserts(response.data);
-        console.log(response.data)
-      }
 
     fetchPlatesMeals();
     fetchPlatesDrinks();
     fetchPlatesDesserts();
-
-
-  },[search])
-
+    
+    
+  },[])
+  
   return (
     <Container>
       <Header />
@@ -72,7 +68,6 @@ export function Home() {
               <Card 
                 key={String(plate.id)}
                 data={plate}
-                onClick={() => handleDetails(plate.id)}
               />
             ))
           }
@@ -83,7 +78,6 @@ export function Home() {
               <Card 
                 key={String(plate.id)}
                 data={plate}
-                onClick={() => handleDetails(plate.id)}
               />
             ))
           }
@@ -94,7 +88,6 @@ export function Home() {
               <Card 
                 key={String(plate.id)}
                 data={plate}
-                onClick={() => handleDetails(plate.id)}
               />
             ))
           }

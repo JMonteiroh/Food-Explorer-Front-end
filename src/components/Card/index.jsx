@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 import { BsHeart } from "react-icons/bs"
 import { AiOutlineRight, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
@@ -6,28 +6,43 @@ import { AiOutlineRight, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 import { ButtonIcon } from "../ButtonIcon";
 import { Button } from "../Button";
 
-import Image from "../../assets/image 2.png"
+import { useNavigate } from "react-router-dom";
 
-export function Card() {
+export function Card({data}) {
+
+  const navigate = useNavigate()
+  
+  function handleDetails() {
+    navigate(`/details/${data.id}`);
+
+  }
+
   return (
-    <Container>
-      <ButtonIcon className="favorite" icon={BsHeart} size={24}/>
+    <Container onClick={handleDetails}>
+      {
+        data &&
+          <Content>
+            <ButtonIcon className="favorite" icon={BsHeart} size={24}/>
 
-      <img src={Image} alt="Titulo do prato" />
 
-      <h3>Salada Ravanello <AiOutlineRight/></h3>
+            <img src={data.image} alt={data.name} />
 
-      <span className="price">R$ 49,97</span>
+            <h3>{data.name} <AiOutlineRight/></h3>
 
-      <div className="quantity">
-        <ButtonIcon className="minus" icon={AiOutlineMinus} size={24} />
+            <span className="price">R$ {data.price}</span>
 
-        <span className="value">01</span>
+            <div className="quantity">
+              <ButtonIcon className="minus" icon={AiOutlineMinus} size={24} />
 
-        <ButtonIcon className="plus" icon={AiOutlinePlus} size={24}/>
+              <span className="value">01</span>
 
-      </div>
-        <Button title="incluir" />
+              <ButtonIcon className="plus" icon={AiOutlinePlus} size={24}/>
+
+            </div>
+
+            <Button title="incluir" />
+          </Content>
+      }
     </Container>
   )
 }

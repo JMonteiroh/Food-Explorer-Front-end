@@ -15,24 +15,25 @@ import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../service/api";
 
 export function Details() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const buttonTitle = windowWidth >= 768 ? 'Incluir - R$ 25,00' : 'Pedir - R$ 25,00';
   
   const [ data, setData ] = useState([]);
   const [ ingredients, setIngredients ] = useState([]);
+  const [ windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [ buttonTitle, setButtonTitle ] = useState();
+  
+  async function fetchIngredients () {
+    const response = await api.get("/ingredients");
+    setIngredients(response.data)
+    
+  }
+  
+  async function fetchPlate() {
+    const response = await api.get(`/plates/${params.id}`);
+  
+    setData(response.data)
+    setButtonTitle(windowWidth >= 768 ? `Incluir - R$ ${data.price}` : `Pedir - ${data.price}`)
+  }
+
 
   const params = useParams();
   const navigate = useNavigate();
@@ -41,26 +42,21 @@ export function Details() {
     navigate('/')
   }
 
-  useEffect(() => {
-    async function fetchPlate() {
-      const response = await api.get(`/plates/${params.id}`);
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+    setButtonTitle(windowWidth >= 768 ? `Incluir - R$ ${data.price}` : `Pedir - ${data.price}`)
+  };
 
-      setData(response.data)
-    }
+  useEffect(() => {
+    
+    () => {
+      window.addEventListener('resize', this.handleResize);
+    };
 
     fetchPlate();
-  }, [])
+    fetchIngredients()
 
-  useEffect(() => {
-    async function fetchIngredients () {
-      const response = await api.get("/ingredients");
-      setIngredients(response.data)
-
-      console.log(response.data)
-    }
-
-    fetchIngredients();
-  }, [])
+  }, []);
 
   return (
     <Container>
@@ -71,7 +67,7 @@ export function Details() {
         {
           data && 
           <Descriptions>
-            <img src={data.image} alt="Foto do prato" />
+            <img src={data.image} alt={data.name} />
 
             <div className="informations">
                 <h2 className="title">{data.name}</h2>
