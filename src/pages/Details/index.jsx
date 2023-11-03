@@ -24,16 +24,18 @@ export function Details() {
   async function fetchIngredients () {
     const response = await api.get("/ingredients");
     setIngredients(response.data)
-    
   }
   
   async function fetchPlate() {
-    const response = await api.get(`/plates/${params.id}`);
-  
-    setData(response.data)
-    setButtonTitle(windowWidth >= 768 ? `Incluir - R$ ${data.price}` : `Pedir - ${data.price}`)
+    try {
+      const response = await api.get(`/plates/${params.id}`);
+    
+      setData(response.data)
+      setButtonTitle(windowWidth >= 768 ? `Incluir - R$ ${response.data.price}` : `Pedir - ${response.data.price}`)
+    } catch (error) {
+      console.error("Erro ao buscar os dados do prato.", error);
+    }
   }
-
 
   const params = useParams();
   const navigate = useNavigate();
@@ -44,19 +46,21 @@ export function Details() {
 
   function handleResize() {
     setWindowWidth(window.innerWidth);
-    setButtonTitle(windowWidth >= 768 ? `Incluir - R$ ${data.price}` : `Pedir - ${data.price}`)
   };
 
   useEffect(() => {
+    window.addEventListener("resize", handleResize);
     
-    () => {
-      window.addEventListener('resize', this.handleResize);
+    fetchPlate();
+    fetchIngredients();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
 
-    fetchPlate();
-    fetchIngredients()
 
-  }, []);
+
+  }, [windowWidth]);
 
   return (
     <Container>
