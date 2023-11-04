@@ -7,8 +7,11 @@ import { ButtonIcon } from "../ButtonIcon";
 import { Button } from "../Button";
 
 import { useNavigate } from "react-router-dom";
+import { api } from "../../service/api"
 
 export function Card({data}) {
+
+  const avatarUrl = data.image ? `${api.defaults.baseURL}/files/${data.image}` : null
 
   const navigate = useNavigate()
   
@@ -25,7 +28,7 @@ export function Card({data}) {
             <ButtonIcon className="favorite" icon={BsHeart} size={24}/>
 
 
-            <img src={data.image} alt={data.name} />
+            <img src={avatarUrl} alt={data.name} />
 
             <h3>{data.name} <AiOutlineRight/></h3>
 

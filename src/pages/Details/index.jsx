@@ -7,7 +7,6 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ButtonIcon } from "../../components/ButtonIcon";
 
-import Image from "../../assets/image 2.png"
 import { Button } from "../../components/Button";
 
 import { useState, useEffect } from "react";
@@ -15,12 +14,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../service/api";
 
 export function Details() {
+
   
   const [ data, setData ] = useState([]);
   const [ ingredients, setIngredients ] = useState([]);
   const [ windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [ buttonTitle, setButtonTitle ] = useState();
   
+  const avatarUrl = data.image ? `${api.defaults.baseURL}/files/${data.image}` : null
+
   async function fetchIngredients () {
     const response = await api.get("/ingredients");
     setIngredients(response.data)
@@ -71,7 +73,7 @@ export function Details() {
         {
           data && 
           <Descriptions>
-            <img src={data.image} alt={data.name} />
+            <img src={avatarUrl} alt={data.name} />
 
             <div className="informations">
                 <h2 className="title">{data.name}</h2>
